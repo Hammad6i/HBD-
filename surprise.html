@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Final Surprise</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cake {
+      margin-top: 50px;
+      font-size: 100px;
+      animation: bounce 1s infinite alternate;
+    }
+
+    .btn {
+      padding: 15px 25px;
+      background: #ff66b2;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .gift {
+      margin-top: 40px;
+      font-size: 80px;
+      display: none;
+      animation: shake 1s infinite;
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-20px); }
+    }
+
+    @keyframes shake {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎂 Blow the Candle!</h1>
+    <div class="cake">🎂🕯️</div>
+    <button class="btn" onclick="showGift()">Blow Candle 🎉</button>
+    <div id="gift" class="gift">🎁</div>
+    <p id="note" style="display:none; font-size: 20px; margin-top: 20px;">You’re a gift to the world 🌍 Happy Birthday Zara! 💖</p>
+  </div>
+
+  <script>
+    function showGift() {
+      document.querySelector('.cake').style.display = 'none';
+      document.getElementById('gift').style.display = 'block';
+      document.getElementById('note').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

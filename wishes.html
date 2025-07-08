@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wishes</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .slider {
+      max-width: 600px;
+      margin: auto;
+      margin-top: 80px;
+      padding: 20px;
+      background: #fff0f5;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #ffaacc;
+      animation: fadeIn 1s;
+    }
+
+    .wish {
+      display: none;
+      font-size: 24px;
+      color: #ff3399;
+      line-height: 1.6;
+    }
+
+    .wish.active {
+      display: block;
+    }
+
+    .next-btn {
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💌 Birthday Wishes for You 💌</h1>
+    <div class="slider">
+      <div class="wish active">🎂 May your smile shine brighter than the candles on your cake!</div>
+      <div class="wish">🎉 May all your dreams come true this year!</div>
+      <div class="wish">💖 You’re not just special today, you’re special every day!</div>
+      <div class="wish">🥳 Sending you love, hugs, and blessings!</div>
+    </div>
+    <button onclick="nextWish()">Next Wish ➡️</button>
+    <a href="gallery.html" class="next-btn">Go to Gallery 📸</a>
+  </div>
+
+  <script>
+    let index = 0;
+    const wishes = document.querySelectorAll('.wish');
+
+    function nextWish() {
+      wishes[index].classList.remove('active');
+      index = (index + 1) % wishes.length;
+      wishes[index].classList.add('active');
+    }
+  </script>
+</body>
+</html>
